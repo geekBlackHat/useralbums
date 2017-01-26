@@ -1,0 +1,18 @@
+{
+  "name": "angular-1-quickstart",
+  "homepage": "https://github.com/geekBlackHat/angular-1-quickstart",
+  "authors": [
+    "its404.com"
+  ],
+  "description": "A quickstart useful for simple angular apps",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
