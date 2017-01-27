@@ -25,9 +25,10 @@ gulp.task('inject-scripts',function(){
 	var servicesStream = gulp.src(['./app/**/*service.js'], {read:false});
 	var controllersStream = gulp.src(['./app/**/*controller.js'], {read:false});
 	var directivesStream = gulp.src(['./app/**/*directive.js'], {read:false});	
+	var filtersStream = gulp.src(['./app/**/*filter.js'], {read:false});
 
 	return gulp.src('app/index.html')
-	.pipe(inject(series(ang, jq ,angularLibsStream, appStream, servicesStream, controllersStream, directivesStream),{relative:true}))
+	.pipe(inject(series(ang, jq ,angularLibsStream, appStream, servicesStream, controllersStream, filtersStream, directivesStream),{relative:true}))
 	.pipe(gulp.dest('./app'));
 });
 
