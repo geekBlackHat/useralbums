@@ -2,10 +2,11 @@
 	'use strict';
 	angular.module('myApp').controller('CommonController',commoncontroller);
 
-	function commoncontroller() {
+	function commoncontroller(DataService) {
 		// body...
 		var vm = this;
 
-		vm.name = "Parent Controller";
+		vm.name = "Anurag Sharma";
+		vm.loanAmount = DataService.amount;
 	}
 })()
