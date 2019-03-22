@@ -1,13 +1,5 @@
-# angular-1-quickstart
-this helps you start an angular project quickly. Project include all needed minimal bower dependencies and gulp configured with live reload
 
-#This quickstart is useful for
-1. Small angular application which will not have more than 10 pages
-2. Applications having single module
-3. For learning purpose and carrying out some experiments while learning
-
-DO NOT USE THIS FOR LARGE ANGULAR APPLICATION
-FOR LARGE ANGULAR APPLICATIONS, PLEASE REFER TO https://github.com/geekBlackHat/angular-1.x-multiple-modules-app
+Project include all needed minimal bower dependencies and gulp configured with live reload
 
 #Requirements
 
