@@ -1,7 +1,7 @@
 {
-  "name": "angular-1-quickstart",
+  "name": "angular-1",
   "version": "0.1.0",
-  "description": "this helps you start an angular project quickly. Project include all needed minimal bower dependencies and gulp configured with live reload",
+  "description": " Project include all needed minimal bower dependencies and gulp configured with live reload",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -24,5 +24,8 @@
     "gulp-inject": "^4.2.0",
     "gulp-util": "^3.0.8",
     "stream-series": "^0.1.1"
+  },
+  "dependencies": {
+    "bower": "^1.8.8"
   }
 }

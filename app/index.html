@@ -6,10 +6,9 @@
       <meta http-equiv = "X-UA-Compatible" content = "IE = edge">
       <meta name = "viewport" content = "width = device-width, initial-scale = 1">
       
-      <title>Angular 1 Quickstart</title>
+      <title>Angular 1 </title>
       
       <!-- inject:css -->
-      <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
       <link rel="stylesheet" href="assets/css/bootstrap.min.css">
       <!-- endinject -->
       
@@ -23,22 +22,51 @@
    </head>
    
    <body ng-app="myApp">
-      <h1>Hello, world!</h1>
       
-      <div ng-controller="CommonController as vm">
-         <div ng-bind="vm.name"></div>
-         <div>Loan Amount : <span ng-bind="vm.loanAmount"></span></div>
+      <div class="container" ng-controller="CommonController as vm">         
+         <div ng-show="vm.showUsers" >
+
+            <h2>Select a user to see Albums</h2>
+            <div ng-repeat="user in vm.users" ng-click="vm.getUserAlbum(user.id)" class="card" style="width: 18rem;">
+               <div class="card-body">
+                  <h5 class="card-title">{{user.name}}</h5>                  
+               </div>
+            </div>
+         </div>
+         <div ng-show="vm.showAlbums">
+            <h2>Select an album to see 5 pics</h2>
+            <button ng-click="vm.backToUserList()">Back</button>
+            <div ng-repeat="album in vm.userAlbum"  class="card" style="width: 18rem;">
+               <div class="card-body" ng-click="vm.getPics(album.id)">
+                  <h5 class="card-title">{{album.title}}</h5>                  
+               </div>
+            </div>
+         </div>
+         <div ng-show="vm.showPics">
+            <button ng-click="vm.backToAlbum()">Back</button>        
+            <div class="row">
+               <div  ng-repeat="pic in vm.userPics | limitTo: 5" class="col-12 col-sm-2 col-md-3  " >
+                  <div class="card" style="width: 18rem;">
+                     <img ng-src="{{pic.url}}" class="card-img-top" alt="{{pic.title}}">
+                     <div class="card-body">
+                        <h5 class="card-title">{{pic.title}}</h5>
+                     </div>
+                  </div>
+               </div>                  
+            </div>
+            
+
+         </div>         
       </div>
       <!-- inject:js -->
       <script src="assets/js/angular.min.js"></script>
-      <script src="assets/js/jquery.min.js"></script>
-      <script src="assets/js/bootstrap.min.js"></script>
       <script src="assets/js/jquery.slim.min.js"></script>
-      <script src="assets/js/sizzle.min.js"></script>
+      <script src="assets/js/popper.min.js"></script>
+      <script src="assets/js/bootstrap.min.js"></script>
       <script src="app.js"></script>
-      <script src="services/data.service.js"></script>
+      <script src="services/http.service.js"></script>
       <script src="controllers/common.controller.js"></script>
-      <script src="filters/date.filter.js"></script>
       <!-- endinject -->
    </body>
+
 </html>
